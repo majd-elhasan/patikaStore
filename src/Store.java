@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Store {
     private Set<Brand> brands = new TreeSet<>();
@@ -193,8 +192,13 @@ public class Store {
             String lower = Input.Input.nextLine();
             System.out.print("markanın adının olabileceği üst sınırı gir > ");
             String upper = Input.Input.nextLine();
+<<<<<<< HEAD
             if (lower.isBlank()) lower = "a";
             if (upper.isBlank()) upper = "z";
+=======
+            if (lower.isBlank() || !lower.chars().allMatch(Character::isLetter)) lower = "a";
+            if (upper.isBlank() || !upper.chars().allMatch(Character::isLetter)) upper = "z";
+>>>>>>> 315fd94 (first version)
             result = filterByBrandName(result,upper,lower);
         }else {
             System.out.print("listelenecek en düşük ID'yi gir > ");
